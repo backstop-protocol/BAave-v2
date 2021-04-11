@@ -4,7 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "postinstall": "npm run submodule-pull && npm run build-protocol-v2",
+    "submodule-pull": "git submodule update --init --recursive",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clear-snapshot": "rimraf snapshot && unzip -q snapshot.zip",
+    "ganache": "npm run clear-snapshot && npx ganache-cli --db './snapshot' -m 'fox sight canyon orphan hotel grow hedgehog build bless august weather swarm'",
+    "build-protocol-v2": "cd protocol-v2 && npm i && npm run compile && npx hardhat typechain"
   },
   "repository": {
     "type": "git",

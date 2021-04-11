@@ -18,5 +18,17 @@ task("accounts", "Prints the list of accounts", async () => {
  */
 module.exports = {
   solidity: "0.7.3",
-};
 
+  networks: {
+    ganache: {
+      url: "http://localhost:8545",
+      accounts: {
+        mnemonic:
+          "fox sight canyon orphan hotel grow hedgehog build bless august weather swarm",
+        path: "m/44'/60'/0'/0",
+        initialIndex: 0,
+        count: 20,
+      },
+    },
+  },
+};
