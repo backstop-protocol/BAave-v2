@@ -14,4 +14,4 @@ Run custom ganache
 `npm run ganache`
 
 Run tests
-`npx hardhat test`
+`npm run test`
